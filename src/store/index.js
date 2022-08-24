@@ -206,15 +206,17 @@ export default createStore({
 
   },
   getters: {
-
+    lovedPhones(state) {
+      return state.Phones.sort((a, b) => { return b.likes - a.likes })
+    },
     filteredPhones(state) {
-      return state.Phones.filter(phone => phone.price >= state.min && phone.price < state.max && phone.company.includes(state.selectedCompany).sort((a, b) => { return b.likes - a.likes }))
+      return state.Phones.filter(phone => phone.price >= state.min && phone.price < state.max && phone.company.includes(state.selectedCompany))
     }
 
   },
   mutations: {
-    gg(state) {
-      console.log(state.Phones[1].likes++)
+    gg(state, val) {
+      console.log(state.Phones[val].likes++)
     }
   },
   actions: {

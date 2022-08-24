@@ -91,25 +91,12 @@
             </MDBListGroup>
           </MDBAccordionItem>
           <MDBAccordionItem headerTitle="Company" collapseId="collapseTwo">
-            <MDBListGroup class="" light>
-              <MDBListGroupItem
-                tag="a"
-                href="#"
-                ripple
-                noBorder
-                spacing
-                action
-                active
-              >
-                All</MDBListGroupItem
-              >
-            </MDBListGroup>
-            <MDBListGroup>
+            <MDBListGroup light>
               <MDBListGroupItem
                 :class="$store.state.selectedCompany == '' ? 'active' : ''"
                 @click="$store.state.selectedCompany = ''"
                 tag="a"
-                href="#"
+                href="#!"
                 ripple
                 noBorder
                 spacing
@@ -156,36 +143,23 @@
             </MDBListGroup>
           </MDBAccordionItem>
           <MDBAccordionItem headerTitle="Likes" collapseId="collapseThree">
-            <MDBListGroup class="" light>
+            <MDBListGroup light>
               <MDBListGroupItem
+                :class="$store.state.selectedCompany == '' ? 'active' : ''"
+                @click="$store.state.selectedCompany = ''"
                 tag="a"
-                :class="
-                  $store.state.min == 0 && $store.state.max == 9999999
-                    ? 'active'
-                    : ''
-                "
-                @click="
-                  $store.state.min = 0;
-                  $store.state.max = 9999999;
-                "
                 href="#"
                 ripple
                 noBorder
                 spacing
                 action
-                >All</MDBListGroupItem
+                >normal</MDBListGroupItem
               >
               <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-                >0 - 40,000</MDBListGroupItem
+                >most popular</MDBListGroupItem
               >
               <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-                >40,000 - 80,000</MDBListGroupItem
-              >
-              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-                >80,000 - 120,000</MDBListGroupItem
-              >
-              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-                >Above 120,000</MDBListGroupItem
+                >least popular</MDBListGroupItem
               >
             </MDBListGroup>
           </MDBAccordionItem>
@@ -216,7 +190,7 @@
                 </MDBCardText>
                 <MDBBtn
                   tag="a"
-                  @click="$store.commit('gg')"
+                  @click="$store.commit('gg', index)"
                   class="rounded-pill"
                   href="#!"
                   color="primary"

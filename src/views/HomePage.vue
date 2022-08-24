@@ -22,7 +22,7 @@
       :items="items1"
       tag="router-link"
       to="/store"
-      interval="5500"
+      interval="1000"
       captionsClass=" carousel-caption d-none d-md-block"
       fade
     />
@@ -39,10 +39,15 @@ export default {
     MDBCarousel,
     MDBContainer,
   },
+  data() {
+    return {
+      g: "./phones/c4.webp",
+    };
+  },
   setup() {
     const items1 = [
       {
-        src: "  https://mdbootstrap.com/img/Photos/Slides/img%20(15).webp ",
+        src: "",
         alt: "",
 
         label: "popular items",
