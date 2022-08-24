@@ -1,5 +1,5 @@
 <template>
-  <MDBNavbar
+  <!-- <MDBNavbar
     class=""
     light
     style="background-color: #e3f2fd"
@@ -17,16 +17,35 @@
         <MDBNavbarItem to="/store" active-class="active"> Store </MDBNavbarItem>
       </MDBNavbarNav>
     </MDBCollapse>
+  </MDBNavbar> -->
+
+  <MDBNavbar expand="md" light bg="white" container position="sticky">
+    <MDBNavbarToggler
+      @click="collapse1 = !collapse1"
+      target="#navbarExample01"
+    ></MDBNavbarToggler>
+    <MDBCollapse v-model="collapse1" target="#navbarExample01">
+      <MDBNavbarNav
+        justifyAround
+        collapse="navbarExample01"
+        class="mb-2 mb-lg-0 align-items-center"
+      >
+        <MDBNavbarItem to="/" active-class="active"> Home </MDBNavbarItem>
+        <MDBNavbarItem to="/store" active-class="active"> Store </MDBNavbarItem>
+        <MDBNavbarItem to="#"> Pricing </MDBNavbarItem>
+        <MDBNavbarItem to="#"> About </MDBNavbarItem>
+      </MDBNavbarNav>
+    </MDBCollapse>
   </MDBNavbar>
 </template>
 <script>
 import {
   MDBNavbar,
   MDBNavbarToggler,
-  MDBNavbarBrand,
   MDBNavbarNav,
   MDBNavbarItem,
   MDBCollapse,
+  /* MDBNavbarBrand, */
 } from "mdb-vue-ui-kit";
 import { ref } from "vue";
 export default {
@@ -34,7 +53,7 @@ export default {
   components: {
     MDBNavbar,
     MDBNavbarToggler,
-    MDBNavbarBrand,
+    /* MDBNavbarBrand, */
     MDBNavbarNav,
     MDBNavbarItem,
 

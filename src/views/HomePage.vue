@@ -1,41 +1,50 @@
 <template>
-  <div class="my-5">
-    <MDBContainer>
-      <MDBRow class="justify-content-center">
-        <MDBCol>
-          <router-link to="/store">
-            <MDBCarousel
-              :controls="false"
-              v-model="carousel1"
-              :items="items1"
-              captionsClass=" carousel-caption d-none d-md-block"
-              fade
-            />
-          </router-link>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('./pexels-felix-mittermeier-956981.jpg');
+      height: 400px;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">welcome to omer store</h1>
+          <h4 class="mb-3">Subheading</h4>
+        </div>
+      </div>
+    </div>
   </div>
+  <MDBContainer>
+    <router-link to="/store">
+      <MDBCarousel
+        :controls="false"
+        v-model="carousel1"
+        :items="items1"
+        interval="1500"
+        captionsClass=" carousel-caption d-none d-md-block"
+        fade
+      />
+    </router-link>
+  </MDBContainer>
 </template>
 
 <script>
 // @ is an alias to /src
-import { MDBCol, MDBCarousel, MDBRow, MDBContainer } from "mdb-vue-ui-kit";
+import { MDBCarousel, MDBContainer } from "mdb-vue-ui-kit";
 import { ref } from "vue";
 export default {
   name: "HomePage",
   components: {
     MDBCarousel,
-    MDBCol,
-    MDBRow,
     MDBContainer,
   },
   setup() {
     const items1 = [
       {
-        src: "https://mdbootstrap.com/img/Photos/Slides/img%20(15).webp",
+        src: "  https://mdbootstrap.com/img/Photos/Slides/img%20(15).webp ",
         alt: "",
-        to: "/store",
+
         label: "popular items",
       },
       {

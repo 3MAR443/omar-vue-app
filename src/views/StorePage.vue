@@ -1,29 +1,144 @@
 <template>
-  <MDBContainer>
-    <MDBRow class="">
-      <MDBCol
-        v-for="phone in $store.state.Phones"
-        :key="phone"
-        class=""
-        lg="4"
-        md="6"
-      >
-        <MDBCard text="center">
-          <MDBCardImg :src="'./' + phone.img" top alt="..." />
-          <MDBCardBody>
-            <MDBCardTitle> {{ phone.name }} </MDBCardTitle>
-            <MDBCardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </MDBCardText>
-            <MDBBtn tag="a" class="rounded-pill" href="#!" color="primary"
-              >buy</MDBBtn
+  <MDBContainer fluid>
+    <MDBRow>
+      <!-- accordion -->
+      <MDBCol lg="3" md="4" sm="12">
+        <MDBAccordion v-model="activeItem">
+          <MDBAccordionItem
+            headerClasses=""
+            headerTitle="Prices"
+            collapseId="collapseOne"
+          >
+            <MDBListGroup class="" light>
+              <MDBListGroupItem
+                tag="a"
+                :class="
+                  $store.state.min == 0 && $store.state.max == 9999999
+                    ? 'active'
+                    : ''
+                "
+                @click="
+                  $store.state.min = 0;
+                  $store.state.max = 9999999;
+                "
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >All</MDBListGroupItem
+              >
+              <MDBListGroupItem
+                tag="a"
+                :class="
+                  $store.state.min == 0 && $store.state.max == 40000
+                    ? 'active'
+                    : ''
+                "
+                @click="
+                  $store.state.min = 0;
+                  $store.state.max = 40000;
+                "
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >0 - 40,000</MDBListGroupItem
+              >
+              <MDBListGroupItem
+                tag="a"
+                :class="$store.state.min == 40000 ? 'active' : ''"
+                @click="
+                  $store.state.min = 40000;
+                  $store.state.max = 80000;
+                "
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >40,000 - 80,000</MDBListGroupItem
+              >
+              <MDBListGroupItem
+                tag="a"
+                :class="$store.state.min == 80000 ? 'active' : ''"
+                @click="
+                  $store.state.min = 80000;
+                  $store.state.max = 120000;
+                "
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >80,000 - 120,000</MDBListGroupItem
+              >
+              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+                >Above 120,000</MDBListGroupItem
+              >
+            </MDBListGroup>
+          </MDBAccordionItem>
+          <MDBAccordionItem headerTitle="Company" collapseId="collapseTwo">
+            <MDBListGroup class="" light>
+              <MDBListGroupItem
+                tag="a"
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                active
+              >
+                All</MDBListGroupItem
+              >
+            </MDBListGroup>
+            <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+              >Samsung</MDBListGroupItem
             >
-            <MDBBtn tag="a" class="rounded-pill" href="#!" color="success"
-              >vote</MDBBtn
+            <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+              >Apple</MDBListGroupItem
             >
-          </MDBCardBody>
-        </MDBCard>
+            <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+              >Huawei</MDBListGroupItem
+            >
+          </MDBAccordionItem>
+          <MDBAccordionItem headerTitle="Likes" collapseId="collapseThree">
+          </MDBAccordionItem> </MDBAccordion
+      ></MDBCol>
+      <!-- accordion end -->
+
+      <!-- product grid -->
+      <MDBCol lg="9" md="8" sm="12">
+        <MDBRow>
+          <MDBCol
+            v-for="(phone, index) in $store.getters.filteredPhones"
+            :key="index"
+            class=""
+            lg="4"
+            md="6"
+            sm="12"
+          >
+            <MDBCard text="center">
+              <MDBCardImg :src="'./' + phone.img" top alt="..." />
+              <MDBCardBody>
+                <MDBCardTitle> {{ phone.name }} </MDBCardTitle>
+                <MDBCardText>
+                  <h3 class="text-secondary">{{ phone.price }}</h3>
+                  <MDBBadge color="danger">
+                    {{ phone.likes + " likes" }}
+                  </MDBBadge>
+                </MDBCardText>
+                <MDBBtn tag="a" class="rounded-pill" href="#!" color="primary"
+                  >buy</MDBBtn
+                >
+                <MDBBtn tag="a" class="rounded-pill" href="#!" color="danger">
+                  <MDBIcon icon="heart"> </MDBIcon>
+                </MDBBtn>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
       </MDBCol>
     </MDBRow>
   </MDBContainer>
@@ -40,7 +155,15 @@ import {
   MDBCol,
   MDBRow,
   MDBContainer,
+  MDBAccordion,
+  MDBAccordionItem,
+  MDBListGroup,
+  MDBListGroupItem,
+  MDBIcon,
+  MDBBadge,
 } from "mdb-vue-ui-kit";
+
+import { ref } from "vue";
 
 export default {
   data() {
@@ -56,6 +179,18 @@ export default {
     MDBCol,
     MDBRow,
     MDBContainer,
+    MDBAccordion,
+    MDBAccordionItem,
+    MDBListGroup,
+    MDBListGroupItem,
+    MDBIcon,
+    MDBBadge,
+  },
+  setup() {
+    const activeItem = ref("collapseOne");
+    return {
+      activeItem,
+    };
   },
 };
 </script>
