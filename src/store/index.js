@@ -13,7 +13,7 @@ export default createStore({
         "name": "Samsung Galaxy A80",
         "img": "phones/e1.png",
         "price": 85000,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -21,7 +21,7 @@ export default createStore({
         "name": "Huawei Mate 30",
         "img": "phones/e2.jpg",
         "price": 45000,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },
@@ -37,7 +37,7 @@ export default createStore({
         "name": "Samsung Note20",
         "img": "phones/e4.png",
         "price": 90000,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -45,7 +45,7 @@ export default createStore({
         "name": "Huawei MateX",
         "img": "phones/e5.jpg",
         "price": 750000,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },
@@ -61,7 +61,7 @@ export default createStore({
         "name": "Samsung Galaxy Fold2",
         "img": "phones/e7.jpg",
         "price": 80000,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -69,7 +69,7 @@ export default createStore({
         "name": "Huawei p40",
         "img": "phones/e8.jpg",
         "price": 60000,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },
@@ -93,7 +93,7 @@ export default createStore({
         "name": "Samsung Galaxy S9",
         "img": "phones/m3.jpg",
         "price": 37000,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -101,7 +101,7 @@ export default createStore({
         "name": "Samsung Galaxy s10",
         "img": "phones/m4.jpg",
         "price": 39500,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -117,7 +117,7 @@ export default createStore({
         "name": "Huawei Y9",
         "img": "phones/m6.jpg",
         "price": 39000,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },
@@ -133,7 +133,7 @@ export default createStore({
         "name": "Samsung Galaxy Note8",
         "img": "phones/m8.jpeg",
         "price": 39500,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -141,7 +141,7 @@ export default createStore({
         "name": "Huawei Y7",
         "img": "phones/c1.webp",
         "price": 19700,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },
@@ -157,7 +157,7 @@ export default createStore({
         "name": "Samsung Galaxy J3",
         "img": "phones/c3.jpg",
         "price": 12500,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -165,7 +165,7 @@ export default createStore({
         "name": "Huawei Nove5",
         "img": "phones/c4.webp",
         "price": 19999,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },
@@ -181,7 +181,7 @@ export default createStore({
         "name": "Samsung J7",
         "img": "phones/c6.jpg",
         "price": 18999,
-        "company": "samsung",
+        "company": "Samsung",
         "condition": "New",
         "likes": "10"
       },
@@ -189,7 +189,7 @@ export default createStore({
         "name": "Huawei P20",
         "img": "phones/c7.jpg",
         "price": 15900,
-        "company": "huawei",
+        "company": "Huawei",
         "condition": "New",
         "likes": "10"
       },

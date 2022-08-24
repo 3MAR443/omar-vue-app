@@ -74,7 +74,18 @@
                 action
                 >80,000 - 120,000</MDBListGroupItem
               >
-              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+              <MDBListGroupItem
+                tag="a"
+                :class="$store.state.min == 120000 ? 'active' : ''"
+                @click="
+                  $store.state.min = 120000;
+                  $store.state.max = 9999999;
+                "
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
                 >Above 120,000</MDBListGroupItem
               >
             </MDBListGroup>
@@ -93,15 +104,56 @@
                 All</MDBListGroupItem
               >
             </MDBListGroup>
-            <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-              >Samsung</MDBListGroupItem
-            >
-            <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-              >Apple</MDBListGroupItem
-            >
-            <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
-              >Huawei</MDBListGroupItem
-            >
+            <MDBListGroup>
+              <MDBListGroupItem
+                :class="$store.state.selectedCompany == '' ? 'active' : ''"
+                @click="$store.state.selectedCompany = ''"
+                tag="a"
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >All</MDBListGroupItem
+              >
+              <MDBListGroupItem
+                :class="
+                  $store.state.selectedCompany == 'Samsung' ? 'active' : ''
+                "
+                @click="$store.state.selectedCompany = 'Samsung'"
+                tag="a"
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >Samsung</MDBListGroupItem
+              >
+              <MDBListGroupItem
+                :class="$store.state.selectedCompany == 'Apple' ? 'active' : ''"
+                @click="$store.state.selectedCompany = 'Apple'"
+                tag="a"
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >Apple</MDBListGroupItem
+              >
+              <MDBListGroupItem
+                :class="
+                  $store.state.selectedCompany == 'Huawei' ? 'active' : ''
+                "
+                @click="$store.state.selectedCompany = 'Huawei'"
+                tag="a"
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >Huawei</MDBListGroupItem
+              >
+            </MDBListGroup>
           </MDBAccordionItem>
           <MDBAccordionItem headerTitle="Likes" collapseId="collapseThree">
           </MDBAccordionItem> </MDBAccordion
