@@ -16,16 +16,16 @@
     </div>
   </div>
   <MDBContainer>
-    <router-link to="/store">
-      <MDBCarousel
-        :controls="false"
-        v-model="carousel1"
-        :items="items1"
-        interval="1500"
-        captionsClass=" carousel-caption d-none d-md-block"
-        fade
-      />
-    </router-link>
+    <MDBCarousel
+      :controls="false"
+      v-model="carousel1"
+      :items="items1"
+      tag="router-link"
+      to="/store"
+      interval="5500"
+      captionsClass=" carousel-caption d-none d-md-block"
+      fade
+    />
   </MDBContainer>
 </template>
 

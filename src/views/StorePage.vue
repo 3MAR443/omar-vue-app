@@ -156,8 +156,41 @@
             </MDBListGroup>
           </MDBAccordionItem>
           <MDBAccordionItem headerTitle="Likes" collapseId="collapseThree">
-          </MDBAccordionItem> </MDBAccordion
-      ></MDBCol>
+            <MDBListGroup class="" light>
+              <MDBListGroupItem
+                tag="a"
+                :class="
+                  $store.state.min == 0 && $store.state.max == 9999999
+                    ? 'active'
+                    : ''
+                "
+                @click="
+                  $store.state.min = 0;
+                  $store.state.max = 9999999;
+                "
+                href="#"
+                ripple
+                noBorder
+                spacing
+                action
+                >All</MDBListGroupItem
+              >
+              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+                >0 - 40,000</MDBListGroupItem
+              >
+              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+                >40,000 - 80,000</MDBListGroupItem
+              >
+              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+                >80,000 - 120,000</MDBListGroupItem
+              >
+              <MDBListGroupItem tag="a" href="#" ripple noBorder spacing action
+                >Above 120,000</MDBListGroupItem
+              >
+            </MDBListGroup>
+          </MDBAccordionItem>
+        </MDBAccordion></MDBCol
+      >
       <!-- accordion end -->
 
       <!-- product grid -->
@@ -176,12 +209,17 @@
               <MDBCardBody>
                 <MDBCardTitle> {{ phone.name }} </MDBCardTitle>
                 <MDBCardText>
-                  <h3 class="text-secondary">{{ phone.price }}</h3>
+                  <h3 class="text-secondary">{{ phone.price + count }}</h3>
                   <MDBBadge color="danger">
                     {{ phone.likes + " likes" }}
                   </MDBBadge>
                 </MDBCardText>
-                <MDBBtn tag="a" class="rounded-pill" href="#!" color="primary"
+                <MDBBtn
+                  tag="a"
+                  @click="$store.commit('gg')"
+                  class="rounded-pill"
+                  href="#!"
+                  color="primary"
                   >buy</MDBBtn
                 >
                 <MDBBtn tag="a" class="rounded-pill" href="#!" color="danger">
@@ -219,7 +257,9 @@ import { ref } from "vue";
 
 export default {
   data() {
-    return {};
+    return {
+      count: 1,
+    };
   },
   components: {
     MDBCard,

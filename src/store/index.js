@@ -15,7 +15,7 @@ export default createStore({
         "price": 85000,
         "company": "Samsung",
         "condition": "New",
-        "likes": "10"
+        "likes": "26"
       },
       {
         "name": "Huawei Mate 30",
@@ -23,10 +23,10 @@ export default createStore({
         "price": 45000,
         "company": "Huawei",
         "condition": "New",
-        "likes": "10"
+        "likes": "40"
       },
       {
-        "name": "Apple 11",
+        "name": "Iphone 11",
         "img": "phones/e3.jpg",
         "price": 90000,
         "company": "Apple",
@@ -50,7 +50,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple12",
+        "name": "Iphone12",
         "img": "phones/e6.jpg",
         "price": 99500,
         "company": "Apple",
@@ -74,7 +74,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple7",
+        "name": "Iphone7",
         "img": "phones/m1.jpg",
         "price": 25000,
         "company": "Apple",
@@ -82,7 +82,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple Mini",
+        "name": "Iphone Mini",
         "img": "phones/m2.jpg",
         "price": 16000,
         "company": "Apple",
@@ -106,7 +106,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple Xr",
+        "name": "Iphone Xr",
         "img": "phones/m5.jpg",
         "price": 39550,
         "company": "Apple",
@@ -122,7 +122,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple X",
+        "name": "Iphone X",
         "img": "phones/m7.jpg",
         "price": 30000,
         "company": "Apple",
@@ -146,7 +146,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple Mini",
+        "name": "Iphone Mini",
         "img": "phones/c2.jpg",
         "price": 15400,
         "company": "Apple",
@@ -170,7 +170,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple Se",
+        "name": "Iphone Se",
         "img": "phones/c5.jpg",
         "price": 11940,
         "company": "Apple",
@@ -194,7 +194,7 @@ export default createStore({
         "likes": "10"
       },
       {
-        "name": "Apple 6S+",
+        "name": "Iphone 6S+",
         "img": "phones/c8.webp",
         "price": 18999,
         "company": "Apple",
@@ -208,13 +208,17 @@ export default createStore({
   getters: {
 
     filteredPhones(state) {
-      return state.Phones.filter(phone => phone.price >= state.min && phone.price < state.max && phone.company.includes(state.selectedCompany))
+      return state.Phones.filter(phone => phone.price >= state.min && phone.price < state.max && phone.company.includes(state.selectedCompany).sort((a, b) => { return b.likes - a.likes }))
     }
 
   },
   mutations: {
+    gg(state) {
+      console.log(state.Phones[1].likes++)
+    }
   },
   actions: {
+
   },
   modules: {
   }
